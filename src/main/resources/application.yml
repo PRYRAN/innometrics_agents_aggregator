@@ -1,0 +1,6 @@
+server:
+    port: 8888
+
+
+agents:
+    gitlab: http://18.191.182.175:8080

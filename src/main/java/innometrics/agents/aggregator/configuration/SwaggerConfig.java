@@ -1,0 +1,41 @@
+package innometrics.agents.aggregator.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+
+    @Bean(name = "productApi")
+    public Docket getProductApi() {
+        Docket apiDocket = new Docket(DocumentationType.SWAGGER_2)
+                .useDefaultResponseMessages(false)
+                .select()
+//                .apis(RequestHandlerSelectors.basePackage("/*"))
+                .paths(PathSelectors.any())
+                .build();
+//                .apiInfo(metaData());
+
+        return apiDocket;
+    }
+
+//    private ApiInfo metaData() {
+//        return new ApiInfoBuilder()
+//                .title("Innometrics project\nGitlab agent")
+//                .description("Set of controllers that fetch metrics from gitlab repos")
+//                .version("0.0.0")
+//                .contact(new Contact(
+//                        "Artem Kozlov",
+//                        "https://university.innopolis.ru",
+//                        "a.kozlov@innopolis.ru"))
+//                .build();
+//    }
+}
