@@ -5,3 +5,4 @@ server:
 agents:
     gitlab: http://18.191.182.175:8080
     trello: http://18.191.182.175:8080
+    jenkins: http://18.191.182.175:8080
